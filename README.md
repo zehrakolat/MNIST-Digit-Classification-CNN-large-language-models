@@ -1,31 +1,45 @@
-Handwritten Digit Recognition with CNN (MNIST)
-This project is an intelligent application designed to classify handwritten digits (0-9) using a Convolutional Neural Network (CNN). Developed as part of the SWE015 - Introduction to Large Language Models course, this project demonstrates the implementation of deep learning concepts using PyTorch.
+# 🧠 Handwritten Digit Recognition with CNN (MNIST)
 
- Features
-High Accuracy: Achieved 99.15% accuracy on the MNIST test set.
+This project is an intelligent image classification application designed to recognize and classify handwritten digits (0-9) using a **Convolutional Neural Network (CNN)**. It was developed as a final project for the **SWE015 - Introduction to Large Language Models** course.
 
-Modern Architecture: Utilizes Convolutional layers, Max Pooling, and Dropout for robust feature extraction and regularization.
+## 🚀 Project Overview
+The goal is to bridge the gap between theoretical machine learning and practical application. The system processes 28x28 grayscale images and predicts the numerical value with high precision using the **PyTorch** framework.
 
-Optimization: Implements Adam optimizer, Learning Rate Scheduling, and Early Stopping to prevent overfitting.
+### Key Highlights:
+* **Accuracy:** Achieved an impressive **99.15%** on the MNIST test set.
+* **Architecture:** Custom CNN with two convolutional layers, max-pooling, and dropout regularization.
+* **Optimization:** Utilizes the Adam optimizer with a step-learning rate scheduler and **Early Stopping** to ensure the best model weights are saved.
 
-Production-Ready: Modular code structure (Preprocessing, Model, Training, Evaluation).
+## 📊 Results & Performance
 
-Performance & Results
-Model Metrics
-The model shows exceptional performance across all classes:
+### 1. Classification Report
+The model performs consistently across all digits, with F1-scores ranging from 0.98 to 1.00.
 
-Test Accuracy: 99.15%
+| Metric | Value |
+| :--- | :--- |
+| **Test Accuracy** | 99.15% |
+| **Precision (Avg)** | 0.99 |
+| **Recall (Avg)** | 0.99 |
+| **F1-Score (Avg)** | 0.99 |
 
-Avg F1-Score: 0.99
+### 2. Visualizations
+Below are the training dynamics and error analysis produced during the evaluation phase:
 
-Training Dynamics
-The training was optimized using Early Stopping, which triggered at Epoch 12 to ensure the best generalization performance.
+![Training Curve](training_curve.png) 
+*Figure 1: Training and Validation loss over epochs, showing early stopping at Epoch 12.*
 
-Tech Stack
-Framework: PyTorch
+![Confusion Matrix](confusion_matrix.png)
+*Figure 2: Confusion matrix highlighting the near-perfect classification and minor overlaps (e.g., 4 vs 9).*
 
-Visualization: Matplotlib, Seaborn
+## 🛠️ Tech Stack & Libraries
+* **Language:** Python 3.13
+* **Deep Learning:** PyTorch, Torchvision
+* **Data Science:** NumPy, Scikit-learn
+* **Visualization:** Matplotlib, Seaborn
 
-Metrics: Scikit-learn
-
-Dataset: MNIST (60,000 train / 10,000 test)
+## 📁 Repository Structure
+* `Data_Preprocessing.py`: Handles MNIST downloading, normalization, and 60/20/20 data splitting.
+* `model_arch.py`: Contains the `DigitClassifier` class (CNN architecture).
+* `train.py`: The main script for training the model with Adam optimizer and Early Stopping logic.
+* `evaluation.py`: Script to load the best model and generate performance metrics/graphs.
+* `best_model_zehra.pth`: The saved state dictionary of the trained model.
